@@ -122,7 +122,7 @@ html,body {min-height: 100%;background-color: #f9f9f9;}
 <body>
 
 <!-- 分享card -->
-<!-- <div class="sharecard">
+<div class="sharecard">
 
 	<div class="rightcol">
 		<div class="usertitle">
@@ -179,7 +179,7 @@ html,body {min-height: 100%;background-color: #f9f9f9;}
 	</div>
 
 </div>
-<div class="comment-content">忠实歌迷</div> -->
+<div class="comment-content">忠实歌迷</div>
 
 
 </body>
@@ -193,69 +193,5 @@ function openMusicPlay () {
 	});
 }
 apiready = function  () {}
-var UIChatTools = api.require('UIChatTools');
-UIChatTools.setAppendButton({
-    styles: {
-        row: 2,
-        column: 4,
-        iconSize: 30,
-        titleSize: 13,
-        titleColor: ''
-    },
-    buttons: [
-       {
-            normal: 'fs://UIChatTools/append1.png',
-            highlight: 'fs://UIChatTools/append11.png',
-            title: '电话'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       },{
-            normal: 'fs://UIChatTools/append3.png',
-            highlight: 'fs://UIChatTools/append31.png',
-            title: '发红包'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       },{
-            normal: 'fs://UIChatTools/append3.png',
-            highlight: 'fs://UIChatTools/append31.png',
-            title: '发红包'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       },{
-            normal: 'fs://UIChatTools/append3.png',
-            highlight: 'fs://UIChatTools/append31.png',
-            title: '发红包'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       },{
-            normal: 'fs://UIChatTools/append3.png',
-            highlight: 'fs://UIChatTools/append31.png',
-            title: '发红包'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       },{
-            normal: 'fs://UIChatTools/append3.png',
-            highlight: 'fs://UIChatTools/append31.png',
-            title: '发红包'
-       },{
-            normal: 'fs://UIChatTools/append2.png',
-            highlight: 'fs://UIChatTools/append21.png',
-            title: '收藏'
-       }
-    ]
-}, function(ret) {
-   api.alert({msg:'点击了第'+ret.index+'个按钮'});
-});
-
 </script>
 </html>
