@@ -192,154 +192,70 @@ function openMusicPlay () {
 		delay:200
 	});
 }
-// apiready = function  () {}
-var rong = null,
-      myToken = null,
-      reListen = false;//这个主要是来判断重新监听的在apiready中我们先获取当前用户的token，加载融云
-apiready = function(){
-   myToken = $api.getStorage('token');//因为是写入本地的，所以就从本地读取了
-   rong = api.require('rongCloud');
-   rong.init(function(ret, err){});
-   getMessageList();//获取会话列表并监听
-}
-function getMessageList(){
-        rong.init(function(ret, err){
-        });
-        rong.setOnReceiveMessageListener(function (ret, err) {
-                insertNewData(ret.result.message);//监听新消息的处理。
-        });
-        rong.connect({
-                    token: myToken
-            },
-            function(ret, err){
-                    if(ret.status=="success"){
-                rong.getConversationList(function (ret, err) {
-                                    if(ret.status=='success'){
-                                            insertData(ret.result);//获取历史记录到数据后写入，这块就不多讲了，可以看下之前的帖子，主要就是for循环一下，然后插入到一个ID里面
-                                    }
-                                });
-
-                        }
-                }
-        );
-}
-var rong=null,myToken = null,myUserid=null;
-apiready = function(){
-myToken = $api.getStorage('token');
-rong = api.require('rongCloud');
-setListen();//监听新消息
-
-}
-function setListen(){
-        rong.init(function(ret, err){
-        });
-        rong.setOnReceiveMessageListener(function (ret, err) {
-                if(ret.result.message.targetId==touserid){
-                        //如果为当前会话用户就写入
-                        var getText = ret.result.message.content.text;
-                        //这里就自己写一个插入到消息容易的语句，下面的一行代码为控制滚动条始终到底部
-                        $("#messageList").scrollTop($('#messageList')[0].scrollHeight);
-                }else{
-                        //如果不是当前用户的会话消息就提示一下
-                        api.toast({
-                            msg: '新消息：'+ret.result.message.content.text,
-                            duration:2000,
-                            location: 'top'
-                        });
-                }
-        });
-        rong.connect({
-            token: mytoken
-                },
-            function(ret, err){
-        });
-}
-function sendMessage(){
-        var sendMsg = $("#messagecont").val();//获取发送框的内容
-        rong.init(function(ret, err){
-        });
-        rong.connect({
-            token: mytoken
-                },
-            function(ret, err){
-        });
-        if(sendMsg){
-                rong.sendTextMessage({
-                        conversationType: 'PRIVATE',
-                        targetId: ''+touserid+'',
-                        text: ''+sendMsg+'',
-                        extra: ''
-                    }, function (ret, err) {
-                        if (ret.status == 'prepare'){
-                                var sendText = ret.result.message.content.text;
-                                //准备发送
-                                //这里就自己写一个插入到消息容易的语句
-                                $("#messageList").scrollTop($('#messageList')[0].scrollHeight);
-                        }else if (ret.status == 'success'){
-                                //发送成功
-                                //发送一个监听事件
-                                api.sendEvent({
-                                            name: 'setReListen',
-                                            extra:{status:'true'}
-                                        });
-                        }else if (ret.status == 'error'){
-                                //发送失败
-                        }
-                });
-        }
-}
-api.addEventListener({
-    name: 'setReListen'
-}, function(ret){
-    if(ret){
-            setListen();//重新开启监听
-    }
+apiready = function  () {}
+var UIChatTools = api.require('UIChatTools');
+UIChatTools.setAppendButton({
+    styles: {
+        row: 2,
+        column: 4,
+        iconSize: 30,
+        titleSize: 13,
+        titleColor: ''
+    },
+    buttons: [
+       {
+            normal: 'fs://UIChatTools/append1.png',
+            highlight: 'fs://UIChatTools/append11.png',
+            title: '电话'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       },{
+            normal: 'fs://UIChatTools/append3.png',
+            highlight: 'fs://UIChatTools/append31.png',
+            title: '发红包'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       },{
+            normal: 'fs://UIChatTools/append3.png',
+            highlight: 'fs://UIChatTools/append31.png',
+            title: '发红包'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       },{
+            normal: 'fs://UIChatTools/append3.png',
+            highlight: 'fs://UIChatTools/append31.png',
+            title: '发红包'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       },{
+            normal: 'fs://UIChatTools/append3.png',
+            highlight: 'fs://UIChatTools/append31.png',
+            title: '发红包'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       },{
+            normal: 'fs://UIChatTools/append3.png',
+            highlight: 'fs://UIChatTools/append31.png',
+            title: '发红包'
+       },{
+            normal: 'fs://UIChatTools/append2.png',
+            highlight: 'fs://UIChatTools/append21.png',
+            title: '收藏'
+       }
+    ]
+}, function(ret) {
+   api.alert({msg:'点击了第'+ret.index+'个按钮'});
 });
-api.addEventListener({
-    name:'keyback'
-},function(ret,err){
-        api.sendEvent({
-        name: 'reListenList',
-        extra:{status:'true'}
-    });
-    api.closeWin();
-})
-var back = function() {
-        api.sendEvent({
-        name: 'reListenList',
-        extra:{status:'true'}
-    });
-    api.closeWin();
-}
-api.addEventListener({
-    name: 'reListenList'
-}, function(ret){
-    if(ret){
-        var value = ret.value;
-        if(value.status=='true'){
-            rong.init(function(ret, err){
-                        });
-                        rong.setOnReceiveMessageListener(function (ret, err) {
-                                insertNewData(ret.result.message);
-                        });
-            rong.connect({
-                                    token: mytoken
-                            },
-                            function(ret, err){
-                                    if(ret.status=='success'){
-                                            rong.getConversationList(function (ret, err) {
-                                                    insertData(ret.result);
-                                                });
-                                                reListen = true;
-                                    }
-                                }
-                        );
-                        //reListen = true;
-        }
-    }
-});
-
-
 
 </script>
 </html>

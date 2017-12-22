@@ -33,4 +33,8 @@
     <category name="android.intent.category.DEFAULT"/>
     <data scheme="rong" host="io.rong.fast" pathPrefix="/conversation/"/>
 </intent-filter>
+<feature name="rongCloud2">
+    <param name="appKey" value="v2.8.23" />
+</feature>
+
 </widget>
