@@ -28,13 +28,4 @@
 	<permission name="bootCompleted"/>
 	<permission name="hardware"/>
 	<access origin="*"/>
-	<intent-filter>
-    <action name="android.intent.action.VIEW"/>
-    <category name="android.intent.category.DEFAULT"/>
-    <data scheme="rong" host="io.rong.fast" pathPrefix="/conversation/"/>
-</intent-filter>
-<feature name="rongCloud2">
-    <param name="appKey" value="v2.8.23" />
-</feature>
-
 </widget>

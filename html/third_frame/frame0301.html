@@ -102,23 +102,12 @@ html,body {min-height: 100%;background-color: #f9f9f9;}
 /* 悬浮 */
 .fmbtnhover {background: #D8D9DA ;}
 .fmbtnhoverinside {background: #D8D9DA ;}
-
-
-html{ background-color: white; }
-header{ border-bottom: 1px solid #ccc; padding: 25px 0; }
-span {
-	padding: 10px 15px;
-	margin: 10px;
-	display: inline-block;
-	background-color: #e8e8e8;
-}
-.hover{ opacity: .4; }
 </style>
 </head>
 <body>
 
 <!-- 分享card -->
-<!-- <div class="sharecard" tapmode="fmbtnhover" onclick="openDynamic()">
+<div class="sharecard" tapmode="fmbtnhover" onclick="openDynamic()">
 	<div class="userlogo"><img src="../../image/frame03cover/frame03cover01.jpg" alt=""></div>
 	<div class="rightcol">
 		<div class="usertitle">
@@ -226,85 +215,12 @@ span {
 	<div class="tool01 tool"><img src="../../image/frame03cover/tool01.png" alt=""><span class="tool01num">175</span></div>
 	<div class="tool02 tool"><img src="../../image/frame03cover/tool02.png" alt=""><span class="tool02num">199</span></div>
 	<div class="tool03 tool"><img src="../../image/frame03cover/tool03.png" alt=""><span class="tool03num">198</span></div>
-</div> -->
+</div>
 
 
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
 <script type="text/javascript">
-var listContact;
-apiready = function() {
-	listContact = api.require('listContact');
-	listContact.open({
-		// y: document.querySelector('.main').offsetHeight,
-		// h: api.winHeight - document.querySelector('.main').offsetHeight,
-			rightBtn: [{
-					color: '#8B0000',
-					title: '备注'
-			}],
-			data: {
-					common: [{
-							placeholderImg: 'widget://image/placeholderImg.png',
-							img: 'http://7xoo0e.com1.z0.glb.clouddn.com/apicloud/948bec8a4df2adb27581319d8a8c014e.png',
-							title: '标题'
-					}],
-					A: [{
-							placeholderImg: 'widget://image/placeholderImg.png',
-							img: 'http://7xoo0e.com1.z0.glb.clouddn.com/apicloud/948bec8a4df2adb27581319d8a8c014e.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}, {
-							placeholderImg: 'widget://image/placeholderImg.png',
-							title: '标题'
-					}]
-			}
-	}, function(ret, err) {
-			if( ret ){
-					//  alert( JSON.stringify( ret ) );
-					openDynamic ();
-
-			}else{
-					//  alert( JSON.stringify( err ) );
-			}
-	});
-	listContact.setRefreshHeader({
-			loadingImg: 'widget://res/img/ic/listContact_arrow.png',
-			bgColor: '#F5F5F5',
-			textColor: '#8E8E8E',
-			textDown: '下拉可以刷新...',
-			textUp: '松开开始刷新...',
-			showTime: true
-	}, function(ret, err) {
-			if (ret) {
-					// alert(JSON.stringify(ret));
-			} else {
-					// alert(JSON.stringify(err));
-			}
-	});
-};
 function openMusicPlay () {
 	api.openWin({
 		name: 'musicplay',
@@ -318,6 +234,6 @@ function openDynamic () {
 		url: './dynamic.html',
 		delay:200
 	});
-}
+}apiready = function  () {}
 </script>
 </html>

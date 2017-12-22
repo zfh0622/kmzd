@@ -27,7 +27,7 @@
 
      /*第一头部*/
     .egret-header-box {height: 50px;}
-    .egret-img img {height: 30px;padding: 10px;padding: 6px;}
+    .egret-img img {height: 30px;padding: 10px;}
     .egret-header-search {background-color: #fff; position: absolute; left: 60px; right: 20px; height: 34px; margin-top: 8px;border-radius: 4px;}
     .egret-header-search img {margin-left: 30px; height: 20px; margin-top: 7px;}
 
@@ -37,13 +37,11 @@
 
 
     /* 第三头部 */
-    .egret-switchframe {position: absolute; left: 90px; right: 90px;text-align: center;height: 30px;line-height: 30px;bottom: 5px;border-radius: 4px;color: #fff;}
-    .egret-switchframe div {color: #fff;}
-    /*.egret-switchframe {position: absolute; left: 90px; right: 90px;background-color: #fcfcfc;text-align: center;height: 30px;line-height: 30px;bottom: 5px;border-radius: 4px;color: #fff;border: 1px solid #fff;}*/
-    /*.egret-switchframe div {width: 50%;display: inline-block;color: #fff;background-color: #D43C33;}*/
-    /*.egret-switchframe div:first-child {border-radius: 4px 0 0 4px;}*/
-    /*.egret-switchframe div:last-child {border-radius: 0px 4px 4px 0px;}*/
-    /*.egret-switchframe-selectswitch {background-color: #fff !important;color: #D43C33 !important;}*/
+    .egret-switchframe {position: absolute; left: 90px; right: 90px;background-color: #fcfcfc;text-align: center;height: 30px;line-height: 30px;bottom: 5px;border-radius: 4px;color: #fff;border: 1px solid #fff;}
+    .egret-switchframe div {width: 50%;display: inline-block;color: #fff;background-color: #D43C33;}
+    .egret-switchframe div:first-child {border-radius: 4px 0 0 4px;}
+    .egret-switchframe div:last-child {border-radius: 0px 4px 4px 0px;}
+    .egret-switchframe-selectswitch {background-color: #fff !important;color: #D43C33 !important;}
 
      /* 头部切换样式 */
      .titlebar {display: none;}
@@ -134,10 +132,9 @@
         <div id="thridHeader" class="titlebar">
             <div class="egret-header topbar">
                 <div class="egret-switchframe">
-                    <div class="egret-switchframe-leftbtn egret-switchframe-selectswitch" onclick="setSecondFramegroupIndex(0)">我的好友</div>
+                    <div class="egret-switchframe-leftbtn egret-switchframe-selectswitch" onclick="setSecondFramegroupIndex(0)">关注</div><div class="egret-switchframe-rightbtn" onclick="setSecondFramegroupIndex(1)">身边</div>
                 </div>
-                <!-- <div  class="egret-img"><img src="./image/frame03cover/cm2_top_icn_invite_prs.png" alt="" onclick="addfriend()" ></div> -->
-                <!-- <div  class="egret-img"><img src="./image/cm2_icn_back.png" alt="" onclick="goback()" ></div> -->
+                <div  class="egret-img"><img src="./image/frame03cover/cm2_top_icn_invite_prs.png" alt="" onclick="addfriend()" ></div>
             </div>
         </div>
 
