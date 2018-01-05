@@ -72,45 +72,23 @@ html,body {min-height: 100%;}
 /* 悬浮 */
 .fmbtnhover {background: #D8D9DA ;}
 
-.swipe {
-                overflow: hidden;
-                visibility: hidden;
-                position: relative;
-                background: #fff;
-                padding-bottom: 10px;
-            }
-
-            .swipe-wrap {
-                overflow: hidden;
-                position: relative;
-            }
-
-            .swipe-wrap .swipe-box {
-                float: left;
-                width: 100%;
-                position: relative;
-            }
-
-            .swipe-wrap .swipe-box img {
-                width: 100%;
-            }
-
 </style>
 </head>
 <body>
 
-<!-- <div class="swiper-container">
+<div class="swiper-container">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide">
+		<!--First Slide-->
+		<div class="swiper-slide"> 
 			<img src="../../image/frame0101cover/frame0101cover01.jpg" alt="">
 		</div>
 
-
+		<!--Second Slide-->
 		<div class="swiper-slide">
 			<img src="../../image/frame0101cover/frame0101cover02.jpg" alt="">
 		</div>
-
-
+		
+		
 		<div class="swiper-slide">
 			<img src="../../image/frame0101cover/frame0101cover03.jpg" alt="">
 		</div>
@@ -123,20 +101,7 @@ html,body {min-height: 100%;}
 			<img src="../../image/frame0101cover/frame0101cover05.jpg" alt="">
 		</div>
 	</div>
-	<div class="swiper-pagination"></div>
-</div> -->
-<div id='slider' class='swipe'>
-    <div class='swipe-wrap'>
-        <div class="swipe-box">
-            <img src="../../image/frame0101cover/frame0101cover01.jpg" alt="">
-        </div>
-        <div class="swipe-box">
-            <img src="../../image/frame0101cover/frame0101cover02.jpg" alt="">
-        </div>
-        <div class="swipe-box">
-            <img src="../../image/frame0101cover/frame0101cover03.jpg" alt="">
-        </div>
-    </div>
+	<div class="pagination"></div>
 </div>
 
 <!-- 2 热门推荐 -->
@@ -233,23 +198,18 @@ html,body {min-height: 100%;}
 
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
-<!-- <script type="text/javascript" src="../../script/idangerous.swiper.js"></script> -->
-<script type="text/javascript" src="../../script/swipe.js"></script>
+<script type="text/javascript" src="../../script/idangerous.swiper.js"></script>
 <script type="text/javascript">
-var slider = Swipe(document.getElementById('slider'), {
-            auto: 3000,
-            continuous: true,
-            callback: function(pos) {}
-        });
-// window.onload = function() {
-// 	var mySwiper = new Swiper('.swiper-container',{
-// 		loop: true,
-// 		autoplay: 2000,
-// 		pagination: '.swiper-pagination',
-// 		paginationType : 'bullets',
-// 		paginationClickable :true,
-// 	});
-// }
+window.onload = function() {
+	var mySwiper = new Swiper('.swiper-container',{
+		mode:'horizontal',
+		loop: true,
+		speed:750,
+		pagination: '.pagination'
+	});
+
+	mySwiper.startAutoplay();
+}
 
 function openMusicList () {
 	api.openWin({

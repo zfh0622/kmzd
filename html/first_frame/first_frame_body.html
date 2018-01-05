@@ -20,14 +20,14 @@
 	</style>
 </head>
 <body>
-	<nav class="navbar">
+	<!-- <nav class="navbar">
         <a id="navbar-item-recommend" class="navbar-item navbar-item-active" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(0);">推荐</a>
         <a id="navbar-item-rank" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(1);">歌单</a>
         <a id="navbar-item-favorite" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(2);">主播电台</a>
         <a id="navbar-item-ranklist" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(3);">排行榜</a>
         <mark id="navmark"></mark>
-    </nav>
-    
+    </nav> -->
+
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
 <script>
@@ -84,7 +84,7 @@
         $api.byId('navmark').style.width = api.winWidth/4 + 'px';
 
         var margintop = api.pageParam.name;
-        
+
         api.openFrameGroup({
             name: 'framegroup01',
             background: '#FFF',
@@ -118,6 +118,6 @@
             setFrameGroupStatus(ret.index);
         });
     };
-	
+
 </script>
 </html>

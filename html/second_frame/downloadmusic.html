@@ -6,9 +6,9 @@
     <title>网易云音乐</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
-
+    
     <style>
-
+     
     /* 头部样式 */
     .topbar {background: #D43C33; height:50px; border-bottom: 1px solid #DDDFE3;position: relative;}
     .topbar_title {display: inline-block;font-size: 20px; line-height: 50px;padding-left: 12px;}
@@ -41,7 +41,7 @@
 
      /* 头部切换样式 */
      .activebar {display: block;}
-
+     
      /* 底部切换按钮样式 */
      ul {display: -webkit-box; display: -webkit-flex; display: flex; }
      #footer {height: 51px; /*line-height: 50px;*/ background-color: #413A36;border-top: 1px solid #332E2A; }
@@ -61,7 +61,7 @@
      .bbtn03 {background: url(../../image/main_index03.png) no-repeat center 4px; }
      .bbtn04 {background: url(../../image/main_index04.png) no-repeat center 4px; }
      .bottom_btn {width: 99%; /*height: 43px;*/padding-top: 23px;background-position-y: 4px; background-size: 24px;  font-size: 10px; color: #A5A5A5;}
-
+     
      /* 底部按钮激活样式 */
      .activebtn0 {/*background: url(../../image/main_index01pressed.png) no-repeat center 4px; */}
      .activebtn1 {/*background: url(../../image/main_index02pressed.png) no-repeat center 4px; */}
@@ -96,17 +96,17 @@
             </div>
         </div>
         <nav class="navbar" id="firstHeaderIndex">
-                <a id="navbar-item-recommend" class="navbar-item navbar-item-active" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(0);">单曲</a>
-                <a id="navbar-item-rank" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(1);">老师</a>
+                <a id="navbar-item-recommend" class="navbar-item navbar-item-active" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(0);">歌曲</a>
+                <a id="navbar-item-rank" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(1);">歌手</a>
                 <a id="navbar-item-favorite" class="navbar-item" tapmode="navbar-item-hov" onclick="setFrameGroupIndex(2);">专辑</a>
                 <mark id="navmark"></mark>
             </nav>
 
 
       <div id="main">
-
+        
       </div>
-
+      
 
     </div>
 </body>
@@ -227,7 +227,7 @@ function setFrameGroupStatus(frameIndex) {
                 $api.byId('navbar-item-recommend').className = "navbar-item navbar-item-active";
                 $api.byId('navbar-item-rank').className      = "navbar-item";
                 $api.byId('navbar-item-favorite').className  = "navbar-item";
-
+                
                 var num = (api.winWidth / 3) * frameIndex;
                 $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
 
@@ -238,7 +238,7 @@ function setFrameGroupStatus(frameIndex) {
                 $api.byId('navbar-item-recommend').className = "navbar-item";
                 $api.byId('navbar-item-rank').className      = "navbar-item navbar-item-active";
                 $api.byId('navbar-item-favorite').className  = "navbar-item";
-
+                
                 var num = (api.winWidth / 3) * frameIndex;
                 $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
                 break;
@@ -248,7 +248,7 @@ function setFrameGroupStatus(frameIndex) {
                 $api.byId('navbar-item-recommend').className = "navbar-item";
                 $api.byId('navbar-item-rank').className      = "navbar-item";
                 $api.byId('navbar-item-favorite').className  = "navbar-item navbar-item-active";
-
+                
                 var num = (api.winWidth / 3) * frameIndex;
                 $api.css($api.byId('navmark'), "-webkit-transform:translate(" + num + "px,0)");
                 break;
@@ -271,7 +271,7 @@ function openFirstFramegroup() {
             x: 0,
             y: firstHeaderOffset.h + firstHeaderIndexHeight,
             w: "auto",
-            h: api.frameHeight - firstHeaderOffset.h - firstHeaderIndexHeight
+            h: api.frameHeight - firstHeaderOffset.h - firstHeaderIndexHeight 
         },
         index: 0,
         frames: [{
@@ -344,7 +344,7 @@ function openSecFrame () {
                 w: 'auto',
                 h: 'auto'
             }
-
+        
         });
 }
 // -----------------------------------
@@ -387,7 +387,7 @@ function setSecondFramegroupIndex(frameIndex) {
         var rightbtn = document.getElementsByClassName('egret-switchframe-rightbtn')[0];
 
         rightbtn.className = 'egret-switchframe-rightbtn egret-switchframe-selectswitch';
-        leftbtn.className  = 'egret-switchframe-leftbtn';
+        leftbtn.className  = 'egret-switchframe-leftbtn';        
         setFrameAttribute('downloadingframe', false);
         setFrameGroupAttribute('downloadmusicgroup', true);
         backSecFrame();
@@ -410,7 +410,7 @@ function openframeinstance(frame, marginTop, isBounce) {
             x: 0,
             y: marginTop,
             w: 'auto',
-            h: api.frameHeight - marginTop
+            h: api.frameHeight - marginTop 
         },
         // pageParam: {name: marginTop },
         bounces: false,
@@ -436,9 +436,9 @@ function sliderbarCallback(id, num) {
 
 // 完成首页初始化
 apiready = function() {
-
+    
     thirdHeader = $api.byId('thridHeader');
-
+    
     var fortheader = $api.byId('fortheader');
     var firstHeaderIndex = $api.byId('firstHeaderIndex');
 
@@ -449,8 +449,8 @@ apiready = function() {
     firstHeaderIndexHeight = $api.offset(firstHeaderIndex).h;
 
     // firstHeaderOffset.h -= firstHeaderIndexHeight;
-
-
+    
+    
 
     var main = $api.byId('main');
     var mainPos = $api.offset(main);
@@ -476,7 +476,7 @@ apiready = function() {
     //     setSecondFramegroupIndex(1)
     // }
 
-
+    
 
 };
 </script>

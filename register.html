@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+    body{
+      background: #fff;
+      overflow: hidden;
+    }
+    .swipe-wraps{
+      width: 100%;
+      margin-top: 100px;
+    }
+    .swipe-wraps .width{
+      position: relative;
+      margin: 0 auto;
+      width: 300px;
+    }
+    .row {
+        box-sizing: border-box;
+        width: auto;
+        height: 70px;
+        /*margin-left: 32px;
+        margin-right: 32px;*/
+        /*padding-top: 40px;*/
+    }
+
+    .input {
+        width: 80%;
+        height: 25px;
+        line-height: 25px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        /*border-radius: 5px;
+        background-color: rgba(254,242,228,0);
+        border-bottom: 1px solid #000;*/
+        border-bottom: 1px solid #999;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .row img{
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+    }
+
+    .btn {
+        width: auto;
+        height: 50px;
+        margin-left: 32px;
+        margin-right: 32px;
+        margin-top: 32px;
+        margin-bottom: 20px;
+        background-color: #9b231c;
+        color: #fff;
+        font-size: 24px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .highlight {
+        opacity: 0.7;
+    }
+
+    .henggang{
+      margin-top: 20px 0;
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+      clear: both;
+    }
+    .zhuce{
+      float: left;
+      width: 50px;
+      height: 30px;
+      overflow: hidden;
+    }
+    .wjmm{
+      float: right;
+      width: 70px;
+      height: 30px;
+    }
+    .QQweixin{
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .QQweixin .QQ{
+      float: left;
+      width: 56px;
+      height: 56px;
+    }
+    .QQweixin div img{
+      width: 100%;
+    }
+    .QQweixin .weixin{
+      float: right;
+      width: 56px;
+      height: 56px;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="swipe-wraps">
+      <div class="width">
+        <div class="row">
+            <!-- <input id="username" class="input" type="text" placeholder="用户名"> -->
+            <img src="./image/phone.png" alt="">
+            <input id="username" class="input" type="text" placeholder="请输入手机号">
+        </div>
+        <div class="row">
+            <!-- <input id="password" class="input" type="password" placeholder="密码"> -->
+            <img src="./image/pw.png" alt="">
+            <input type="password" class="input" required="true" name="passwd1" placeholder="请输入登陆密码"/>
+        </div>
+        <div class="btn" tapmode="highlight" onclick="fnOpenIndexWin();">登录</div>
+        <div class="henggang">
+          <div class="zhuce" onclick="fnOpenRegisterFrameWin()">注册</div>
+          <div class="wjmm">忘记密码</div>
+        </div>
+        <div class="QQweixin">
+          <div class="QQ"><img src="image/frame04cover/cm2_mlogo_qq.png" alt=""></div>
+          <div class="weixin"><img src="image/frame04cover/cm2_mlogo2_weixin.png" alt=""></div>
+        </div>
+      </div>
+  </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/APICloud-rest.js"></script>
+<script type="text/javascript" src="./script/SHA1.js"></script>
+<script type="text/javascript">
+  apiready = function() {};
+
+  function fnOpenIndexWin(){
+    api.openWin({
+        name: 'index',
+        url: './index.html',
+        pageParam: {
+            name: 'test'
+        }
+    });
+  }
+  function fnOpenRegisterFrameWin () {
+      api.openWin({
+          name: 'register_frame',
+          url: './register_frame.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+  }
+
+</script>
+
+</html>

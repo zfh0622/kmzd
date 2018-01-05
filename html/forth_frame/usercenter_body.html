@@ -107,6 +107,29 @@ html,body {min-height: 100%;background-color: #f9f9f9;}
 
 /* 头部背景 */
 .usercenter-bg {position: absolute; left: 0; bottom: 0; width: 100%;}
+
+.upload_img_div {
+	/*width: 100%;
+	height: 180px;*/
+	margin-top: 20px;
+	text-align: center;
+	margin-right: 20px;
+}
+.head_img {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	background-image: url(../../image/default_head.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: 2px solid #999;
+}
 </style>
 </head>
 <body>
@@ -114,14 +137,15 @@ html,body {min-height: 100%;background-color: #f9f9f9;}
 <!-- 1 用户登录 -->
 <div class="egret-flex-item profile">
 	<!-- <img src="../../image/frame04cover/usercentercover01.jpg" alt="" class="usercenter-bg"> -->
-	<div class="egret-flex-item-logo">
-		<img src="../../image/default_head.png" alt="" class="">
+	<div class="egret-flex-item-logo upload_img_div">
+			<div class="head_img" id="head_img" onclick="setPicture()" tapmode></div>
+		<!-- <img src="../../image/default_head.png" alt="" class=""> -->
 	</div>
 	<div class="egret-flex-item-shelf">
 		<div class="egret-flex-item-shelf01">枕边小宝</div>
 		<!-- <span class="egret-flex-item-shelf02">编辑资料</span> -->
 	</div>
-	
+
 	<!-- <div class="usercenter-bg"><img src="../../image/frame04cover/usercentercover01.jpg" alt=""></div> -->
 </div>
 <div class="userinfo">
@@ -191,6 +215,17 @@ function openMusicList () {
 		delay:200
 	});
 }
+function setPicture(){
+	api.openWin({
+	    name: 'upload_avatar0',
+	    url: './upload_avatar0.html',
+	    delay:200
+	});
+
+}
 apiready = function  () {}
+		var headImageUrl;
+
+
 </script>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="copyright" content="www.apicloud.com" />
 <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-<title>听单</title>
+<title>歌单</title>
 <link rel="stylesheet" type="text/css" href="../css/api.css" />
 <style>
 html,body {min-height: 100%;background-color: #f9f9f9;}
@@ -180,12 +180,12 @@ function emptycache () {
 			w: 'auto',
 			h: 'auto'
 		}
-
+	
 	});
 }
 apiready = function (){
 	var header = $api.byId('secHeader');
-    $api.fixStatusBar(header);
+    $api.fixStatusBar(header); 
 
     var headerPos = $api.offset(header);
 
@@ -200,7 +200,7 @@ apiready = function (){
 			w: 'auto',
 			h: 'auto'
 		}
-
+	
 	});
 
 }

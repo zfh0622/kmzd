@@ -1,12 +1,12 @@
-<widget id="A6068784333482"  version="0.0.1">
-	<name>kongmengzhidao</name>
+<widget id="A6961352947885"  version="0.0.1">
+	<name>wangyimusic</name>
 	<description>
-	    孔孟之道
+	    仿网易云音乐
 	</description>
-	<author email="cuichenguang1314@163.com" href="cuichenguang1314@163.com">
-	    cuichenguang1314@163.com
+	<author email="2963433130@qq.com" href="2963433130@qq.com">
+	    2963433130@qq.com
 	</author>
-	<content src="index.html" />
+	<content src="welcome.html" />
 	<preference name="pageBounce" value="false"/>
 	<preference name="appBackground" value="rgba(0,0,0,0.0)"/>
 	<preference name="windowBackground" value="rgba(0,0,0,0.0)"/>
