@@ -15,7 +15,7 @@
     #thridHeader {background-color:  #D43C33;}
     #fortheader {background-color:  #D43C33;}
 
-    .topbar {background: #D43C33; height:50px; border-bottom: 1px solid #DDDFE3;position: relative;height:120px; }
+    .topbar {background: #D43C33; height:50px; border-bottom: 1px solid #DDDFE3;position: relative; }
     .topbar_title {display: inline-block;font-size: 20px; line-height: 50px;padding-left: 12px;}
     .hr01, .hr02 {height: 28px;}
     .headerico {padding: 11px 15px 11px 15px;}
@@ -54,6 +54,7 @@
      #footer {height: 51px; /*line-height: 50px;*/ background-color: #413A36;border-top: 1px solid #332E2A; }
      #footer li{-webkit-box-flex: 1; -webkit-flex: 1; flex:1; /*height: 40px;*/}
 
+
      /* 选项卡样式 */
      .scrollbar {display: -webkit-box;display: -webkit-flex; text-align: center; height: 40px; line-height: 40px;background: #EBECF0;font-size: 12px;position: relative;}
      .col1 {-webkit-box-flex:1;-webkit-flex: 1;flex:1;color: #909090;}
@@ -87,8 +88,11 @@
     .navbar-item-active {color: #D43C33; }
     #navmark {position: absolute; left: 0px; bottom: 0px; -webkit-transition: 300ms; text-align: center; height: 2px;background-color: #D43C33;}
     .item{width: 125px;}
-
-
+    .center{position: absolute;top:5px;left:44%;width:62px;height:62px;border-radius: 62px;background-color: #fff;-webkit-box-flex: 1; -webkit-flex: 1; flex:1;margin:0 auto; }
+    .center .video{background: url(./image/yuan.png) no-repeat center 8px;width:40px;height:60px;}
+    #footer{position: relative;height: 71px;background-color: #ebebeb;border-top: none;padding-top: 5px;}
+    #footer ul{ margin-top: 25px;background: #fff;}
+    #footer ul li .bottom_btn{}
     </style>
 </head>
 <body>
@@ -103,20 +107,6 @@
                         <input type="text" placeholder="搜索音乐、歌词、电台">
                     </div>
                 </div>
-                <ul style="height: 80px;position: absolute;top: 80px;text-align: center;width: 100%;">
-                  <li class="item">
-                    <img src="" alt="">
-                    <p>AI语音</p>
-                  </li>
-                  <li class="item">
-                    <img src="" alt="">
-                    <p>AI语音</p>
-                  </li>
-                  <li class="item">
-                    <img src="" alt="">
-                    <p>AI语音</p>
-                  </li>
-                </ul>
             </div>
 
             <nav class="navbar" id="firstHeaderIndex">
@@ -160,24 +150,31 @@
       </div>
 
       <div id="footer">
-        <!-- <ul>
+
+        <ul >
           <li tapmode="activebtn0 activebtn" onclick="switchframe('first_frame')">
-            <a class="bottom_btn bbtn01 weixin activebtn activebtn0">发现音乐</a>
+            <a class="bottom_btn bbtn01 weixin activebtn activebtn0">首页</a>
           </li>
 
           <li tapmode="activebtn1 activebtn" onclick="switchframe('second_frame')">
-            <a class="bottom_btn bbtn02 communicate">我的音乐</a>
+            <a class="bottom_btn bbtn02 communicate">发现</a>
           </li>
-
+          <li tapmode=" activebtn " onclick="switchframe('second0_frame')">
+          </li>
           <li tapmode="activebtn2 activebtn" onclick="switchframe('third_frame')">
-            <a class="bottom_btn bbtn03 discover">朋友</a>
+            <a class="bottom_btn bbtn03 discover">国友</a>
           </li>
 
           <li tapmode="activebtn3 activebtn" onclick="switchframe('forth_frame')">
             <a class="bottom_btn bbtn04 home">账号</a>
           </li>
-        </ul> -->
+        </ul>
+        <div class="center">
+          <a class="video"></a>
+        </div>
+        <div class="centerButton">
 
+        </div>
       </div>
     </div>
 </body>
@@ -241,7 +238,7 @@ function openLeftgroup() {
             x: 0,
             y: thridHeader.h,
             w: 'auto',
-            h: (api.frameHeight - footerPos.h - thridHeader.h)
+            h: (api.frameHeight - footerPos.h  - thridHeader.h)
         },
         bounces: false,
         delay: 200
@@ -269,7 +266,7 @@ function openRightgroup() {
             x: 0,
             y: thridHeader.h,
             w: 'auto',
-            h: (api.frameHeight - footerPos.h - thridHeader.h)
+            h: (api.frameHeight - footerPos.h- thridHeader.h)
         },
         bounces: false,
         delay: 200
@@ -692,6 +689,7 @@ apiready = function() {
     var footer = $api.byId('footer');
     var footerPos = $api.offset(footer);
 
+
     // 第一次进入打开 first_frame body
     // api.openFrame ({
     //     name: 'first_frame',
@@ -713,100 +711,7 @@ apiready = function() {
     openFirstFramegroup();
 
 };
-    var tabBarMenu = api.require('tabBarMenu'),
-        theme = 'simple';
-    tabBarMenu.open({
-        defaultBarSelect: 1,
-        autoLayout: true,
-        barConfig: {
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_bg.png'
-        },
-        barItemConfig: {
-            titleColor: '#fff',
-            titleSelectColor: '#fff',
-            fontSize: 11.0,
-            textMarginTop: 41.0,
-            primaryItem: 2
-        },
-        barItems: [{
-            title: '动态',
-            bgImg: 'widget://image/tabBarMenu/' + theme + 'tabbar_icon_auth.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_auth_click.png'
-        }, {
-            title: '与我有关',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_at.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_at_click.png'
-        }, {
-            title: '动态',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_click.png'
-        }, {
-            title: '玩吧',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_more.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_more_click.png'
-        }, {
-            title: '空间',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_space.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_icon_space_click.png'
-        }],
-        menuConfig: {
-            coverBgColor: '#000000',
-            coverAlpha: 0.8,
-            rows: 4
-        },
-        menuItemConfig: {
-            titleColor: '#fff',
-            titleSelectColor: '#fff',
-            fontSize: 11.0,
-            textMarginTop: 90.0
-        },
-        menuItems: [{
-            title: '说说',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_talk.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_talk_click.png'
-        }, {
-            title: '照片',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_transferphotos.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_transferphotos_click.png'
-        }, {
-            title: '水印相机',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_watermarkcamera.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_watermarkcamera_click.png'
-        }, {
-            title: '视频',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_video.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_video_click.png'
-        }, {
-            title: '签到',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_registration.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_registration_click.png'
-        }, {
-            title: '连拍',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_continuousshooting.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_continuousshooting_click.png'
-        }, {
-            itle: '日志',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_journal.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_journal_click.png'
-        }, {
-            title: '二维码',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_2dbarcode.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_2dbarcode_click.png'
-        }, {
-            title: '语音相机',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_videocamera.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_videocamera_click.png'
-        }, {
-            title: '位置',
-            bgImg: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_place.png',
-            bgImgClick: 'widget://image/tabBarMenu/' + theme + '/tabbar_btn_popup_place_click.png'
-        }]
-    }, function(ret, err) {
-        if (ret) {
-            alert(JSON.stringify(ret));
-        } else {
-            alert(JSON.stringify(err));
-        }
-    });
+
+
 </script>
 </html>
