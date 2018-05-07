@@ -1,9 +1,8 @@
-<!-- <widget id=" A6064712713607" version="0.0.1"> -->
-  <!-- <widget id=" A6064712713607" version="0.0.1"> -->
-    <widget id="A6061528794945" version="0.0.1">
-
+<!-- <widget id="A6061528794945" version="0.0.1"> -->
+  <widget id=" A6064712713607" version="0.0.1">
+    <!-- <widget id="A6061528794945" version="0.0.1"> -->
     <name>kmzd</name>
-
+    
     <description>
 
         Example For APICloud.
@@ -11,11 +10,13 @@
     </description>
 
     <author email="developer@apicloud.com" href="http://www.apicloud.com">
+
         Developer
+
     </author>
+
     <!-- <content src="login.html"/> -->
     <content src="index.html"/>
-
     <access origin="*"/>
 
     <preference name="pageBounce" value="false"/>
@@ -57,22 +58,16 @@
     <permission name="bootCompleted"/>
 
     <permission name="hardware"/>
-    <!-- <preference name="backgroundMode" value="audio | location"/> -->
 
     <feature name="qq">
         <param name="urlScheme" value="tencent1106657350"/>
         <param name="apiKey" value="1106657350"/>
     </feature>
-    <!-- <feature name="weiXin">
-        <param name="urlScheme" value="wxee4b5978056a41ba"/>
-        <param name="apiKey" value="wxee4b5978056a41ba"/>
-        <param name="apiSecret" value="c0c9662f6327fd8e9308fc66ab371781"/>
-    </feature> -->
     <feature name="wx">
-      <param name="urlScheme" value="wxee4b5978056a41ba"/>
-      <param name="apiKey" value="wxee4b5978056a41ba"/>
-      <param name="apiSecret" value="c0c9662f6327fd8e9308fc66ab371781"/>
-    </feature>
+     <param name="urlScheme" value="wxee4b5978056a41ba"/>
+     <param name="apiKey" value="wxee4b5978056a41ba"/>
+     <param name="apiSecret" value="7dda7122b466ec13ab908460df14a410"/>
+   </feature>
     <feature name="weibo">
         <param name="urlScheme" value="bf186e208a6c05113d59a1e1868d3ade"/>
         <param name="apiKey" value="419374056"/>
